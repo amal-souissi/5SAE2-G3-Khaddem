@@ -1,7 +1,6 @@
 
 
-FROM openjdk:8-jdk-alpine
-ARG JAR_FILE=target/*.jar
-RUN apk --no-cache add curl
-ENTRYPOINT ["java","-jar","/Khaddem.jar"]
-EXPOSE 8089
+FROM openjdk:8
+EXPOSE 8080
+ADD target/khaddem-4.0.jar khaddem-4.0.jar
+ENTRYPOINT ["java","-jar","/khaddem-4.0.jar"]
