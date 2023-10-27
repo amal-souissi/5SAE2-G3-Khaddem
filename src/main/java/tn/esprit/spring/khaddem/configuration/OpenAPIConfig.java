@@ -18,7 +18,7 @@ public class OpenAPIConfig {
     }
 
     public Contact contactAPI() {
-        Contact contact = new Contact().name("zaineb bachouch").email("zaineb.bachouch@esprit.tn").url("https://www.linkedin.com/in/zaineb-bachouch-7b41aa197/");
+        Contact contact = new Contact().name("zaineb bachouch").email("zaineb.bachocuh@esprit.tn").url("https://www.linkedin.com/in/zaineb-bachouch-7b41aa197/");
         return contact;
     }
 }
