@@ -1,4 +1,5 @@
-FROM openjdk:8
+FROM openjdk:8-jdk-alpine
 EXPOSE 8089
-ADD /target/khaddem-4.0.jar khaddem.jar
-ENTRYPOINT ["java", "-jar","khaddem.jar"]
+ARG JAR_FILE=target/khaddem-4.0.jar
+COPY ${JAR_FILE} khaddem.jar
+ENTRYPOINT ["java", "-jar", "/khaddem.jar"]
