@@ -16,7 +16,7 @@ import java.util.List;
 @Service
 @Slf4j
 @AllArgsConstructor
-public class ContratServiceImpl implements  IContratService{
+public class ContratServiceImpl  implements  IContratService{
 
     ContratRepository contratRepository;
     EtudiantRepository etudiantRepository;
