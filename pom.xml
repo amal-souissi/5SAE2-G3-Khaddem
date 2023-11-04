@@ -14,7 +14,7 @@
     <name>khaddem</name>
     <description>khaddem</description>
     <properties>
-        <java.version>11</java.version>
+        <java.version>8</java.version>
     </properties>
     <dependencies>
         <!-- JUnit -->
@@ -30,15 +30,6 @@
             <artifactId>mockito-junit-jupiter</artifactId>
             <version>3.6.0</version>
             <scope>test</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>org.mockito</groupId>
-            <artifactId>mockito-core</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -67,11 +58,7 @@
             <artifactId>springdoc-openapi-ui</artifactId>
             <version>1.6.9</version>
         </dependency>
-        <dependency>
-            <groupId>org.quartz-scheduler</groupId>
-            <artifactId>quartz</artifactId>
-            <version>2.3.2</version>
-        </dependency>
+
     </dependencies>
 
     <build>
@@ -88,14 +75,7 @@
                     </excludes>
                 </configuration>
             </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-clean-plugin</artifactId>
-                <version>3.3.1</version> <!-- Utilisez une version compatible avec votre Maven -->
-            </plugin>
         </plugins>
-        <finalName>khaddem</finalName>
     </build>
-
 
 </project>
