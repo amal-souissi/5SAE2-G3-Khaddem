@@ -86,8 +86,8 @@
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-clean-plugin</artifactId>
-                <version>3.1.0</version> <!-- Use a version compatible with your Maven -->
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>3.2.0</version> <!-- Utilisez la version compatible avec votre projet -->
             </plugin>
             <plugin>
                 <groupId>org.jacoco</groupId>
