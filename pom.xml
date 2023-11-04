@@ -17,6 +17,18 @@
         <java.version>8</java.version>
     </properties>
     <dependencies>
+        <dependency>
+            <groupId>org.quartz-scheduler</groupId>
+            <artifactId>quartz</artifactId>
+            <version>2.3.2</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>tn.esprit.spring</groupId> <!-- Remplacez 'org.somegroup' par le véritable groupId de la dépendance à exclure -->
+                    <artifactId>khaddem</artifactId> <!-- Remplacez 'some-artifact' par le véritable artifactId de la dépendance à exclure -->
+                </exclusion>
+            </exclusions>
+        </dependency>
+
         <!-- JUnit -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
