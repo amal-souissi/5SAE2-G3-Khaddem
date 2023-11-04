@@ -1,5 +1,6 @@
-FROM openjdk:8-jdk-alpine
+FROM openjdk:11
 EXPOSE 8089
-ARG JAR_FILE=target/khaddem-4.0.jar
-COPY ${JAR_FILE} khaddem.jar
-ENTRYPOINT ["java", "-jar", "/khaddem.jar"]
+ADD /target/khaddem-4.0.jar khaddem.jar
+ENTRYPOINT ["java", "-jar","khaddem.jar"]
+#  docker build -t gestion-station-ski .
+#  docker run -p 8089:8089 --name gestion-station-ski-container -d gestion-station-ski
