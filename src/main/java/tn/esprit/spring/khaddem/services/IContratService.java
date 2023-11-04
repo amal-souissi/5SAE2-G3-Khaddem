@@ -1,6 +1,7 @@
 package tn.esprit.spring.khaddem.services;
 
 import tn.esprit.spring.khaddem.entities.Contrat;
+import tn.esprit.spring.khaddem.entities.Etudiant;
 
 import java.util.Date;
 import java.util.List;
@@ -20,4 +21,8 @@ public interface IContratService {
     public float getChiffreAffaireEntreDeuxDates(Date startDate, Date endDate);
 
     public void retrieveAndUpdateStatusContrat();
+
+    public List<Contrat> retrieveContractsByStudent(int id);
+    public List<Contrat> retrieveContractsByDepartment(String departmentName);
+    //public Etudiant createOrUpdateEtudiant(Etudiant etudiant);
 }

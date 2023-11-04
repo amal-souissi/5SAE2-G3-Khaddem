@@ -23,9 +23,6 @@ public class Etudiant  implements Serializable {
     @Enumerated(EnumType.STRING)
     private  Option op;
 
-
-
-
     @Override
     public String toString() {
         return "Etudiant{" +
@@ -59,6 +56,7 @@ public class Etudiant  implements Serializable {
     public void setIdEtudiant(Integer idEtudiant) {
         this.idEtudiant = idEtudiant;
     }
+
 
     public String getPrenomE() {
         return prenomE;

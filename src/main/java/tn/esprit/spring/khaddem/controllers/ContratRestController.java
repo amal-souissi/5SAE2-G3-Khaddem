@@ -50,10 +50,13 @@ public class ContratRestController {
     // http://localhost:8089/Kaddem/contrat/addAndAffectContratToEtudiant/salah/ahmed
     @PostMapping("/addAndAffectContratToEtudiant/{nomE}/{prenomE}")
     @ResponseBody
-    public Contrat addAndAffectContratToEtudiant(@RequestBody Contrat contrat,@PathVariable("nomE") String nomE,@PathVariable("prenomE") String prenomE) {
+    public Contrat addAndAffectContratToEtudiant(@RequestBody Contrat contrat,
+                                                 @PathVariable("nomE") String nomE,
+                                                 @PathVariable("prenomE") String prenomE) {
         Contrat c= contratService.addAndAffectContratToEtudiant(contrat,nomE,prenomE);
         return c;
     }
+
 
     //The most common ISO Date Format yyyy-MM-dd — for example, "2000-10-31".
     @GetMapping(value = "/getnbContratsValides/{startDate}/{endDate}")
@@ -81,4 +84,19 @@ public class ContratRestController {
         return contratService.getChiffreAffaireEntreDeuxDates(startDate, endDate);
     }
 
+
+    @GetMapping("/byStudent/{id}")
+    public List<Contrat> retrieveContractsByStudent(@PathVariable int id) {
+        return contratService.retrieveContractsByStudent(id);
+    }
+
+
+    @GetMapping("/byDepartment/{departmentName}")
+    public List<Contrat> retrieveContractsByDepartment(@PathVariable String departmentName) {
+        return contratService.retrieveContractsByDepartment(departmentName);
+    }
+
 }
+
+
+
