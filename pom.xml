@@ -97,7 +97,6 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-clean-plugin</artifactId>
-                <version>3.3.1</version> <!-- Use a version compatible with your Maven -->
             </plugin>
             <plugin>
                 <groupId>org.jacoco</groupId>
