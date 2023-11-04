@@ -23,11 +23,12 @@
             <version>2.3.2</version>
             <exclusions>
                 <exclusion>
-                    <groupId>org.springframework.boot</groupId>
-                    <artifactId>spring-boot-dependencies</artifactId>
+                    <groupId>com.zaxxer</groupId> <!-- Remplacez * par le groupId réel de la dépendance à exclure -->
+                    <artifactId>HikariCP</artifactId> <!-- Remplacez * par le artifactId réel de la dépendance à exclure -->
                 </exclusion>
             </exclusions>
         </dependency>
+
 
 
         <!-- JUnit -->
