@@ -14,7 +14,7 @@
     <name>khaddem</name>
     <description>khaddem</description>
     <properties>
-        <java.version>8</java.version>
+        <java.version>11</java.version>
     </properties>
     <dependencies>
         <!-- JUnit -->
@@ -24,6 +24,7 @@
             <version>5.7.0</version>
             <scope>test</scope>
         </dependency>
+
         <!-- Mockito -->
         <dependency>
             <groupId>org.mockito</groupId>
