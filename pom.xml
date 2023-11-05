@@ -82,7 +82,9 @@
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
-                <version>0.8.5</version>
+
+                <!-- <version>0.8.5</version> lookup parent from repository -->
+
                 <executions>
                     <execution>
                         <goals>
