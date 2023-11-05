@@ -58,20 +58,22 @@
              <version>1.6.9</version>
          </dependency>
 
+
          <dependency>
              <groupId>org.sonarsource.scanner.maven</groupId>
              <artifactId>sonar-maven-plugin</artifactId>
-             <version>3.10.0.2594</version> <!-- Your specific version -->
+             <version>3.10.0.2594</version>
          </dependency>
 
      </dependencies>
 
      <build>
          <plugins>
+
              <plugin>
                  <groupId>org.sonarsource.scanner.maven</groupId>
                  <artifactId>sonar-maven-plugin</artifactId>
-                 <version>3.10.0.2594</version> <!-- Your specific version -->
+                 <version>3.10.0.2594</version>
              </plugin>
              <plugin>
                  <groupId>org.springframework.boot</groupId>
@@ -119,6 +121,17 @@
 
         </plugins>
         <finalName>khaddem</finalName>
+
+
+         <pluginManagement>
+             <plugins>
+                 <plugin>
+                     <groupId>org.sonarsource.scanner.maven</groupId>
+                     <artifactId>sonar-maven-plugin</artifactId>
+                     <version>3.7.0.1746</version>
+                 </plugin>
+             </plugins>
+         </pluginManagement>
     </build>
 <distributionManagement>
     <repository>
