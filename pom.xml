@@ -5,7 +5,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.5.2</version>
+        <version>2.5.3</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>tn.esprit.spring</groupId>
@@ -108,5 +108,11 @@
         </plugins>
         <finalName>khaddem</finalName>
     </build>
-
+<distributionManagement>
+    <repository>
+        <id>deploymentRepo</id>
+        <name>Nexus Repository</name>
+        <url>http://localhost:8081/repository/maven-releases</url>
+    </repository>
+</distributionManagement>
 </project>
