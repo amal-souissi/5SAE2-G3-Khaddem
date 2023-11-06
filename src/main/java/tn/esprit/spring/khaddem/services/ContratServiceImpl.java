@@ -146,7 +146,7 @@ public class ContratServiceImpl  implements  IContratService{
         log.info("ehhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh");
       System.out.println("***************************");
         List<Contrat> contracts = contratRepository.findContratByEtudiantIdEtudiant(id);
-        System.out.println("*****************************Retrieved contracts: " + contracts);
+        System.out.println("**************nnnnnn***************Retrieved contracts: " + contracts);
         return contracts;
     }
 
