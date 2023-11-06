@@ -9,7 +9,7 @@ services:
     container_name: khaddem
     restart: always
     environment:
-      SPRING_DATASOURCE_URL: jdbc:mysql://mysql-container-devops:3306/stationski?createDatabaseIfNotExist=true
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql-container-devops:3306/khaddemapp?createDatabaseIfNotExist=true
       #  SPRING_DATASOURCE_USERNAME: user
       #  SPRING_DATASOURCE_PASSWORD: password
       SPRING_DATASOURCE_USERNAME: root
@@ -29,7 +29,7 @@ services:
     image: "mysql"
     container_name: mysql-container-devops
     environment:
-      MYSQL_DATABASE: stationski
+      MYSQL_DATABASE: khaddemapp
       MYSQL_ROOT_PASSWORD: root
       # MYSQL_USER: user
       # MYSQL_PASSWORD: password
@@ -57,3 +57,4 @@ volumes:
 # info
 # docker-compose up -d
 # docker-compose down ; docker rmi khaddem
+# docker run --name mysql-container-test-3307 -p 3307:3306 -e MYSQL_ROOT_PASSWORD=root -d --restart unless-stopped mysql:latest
