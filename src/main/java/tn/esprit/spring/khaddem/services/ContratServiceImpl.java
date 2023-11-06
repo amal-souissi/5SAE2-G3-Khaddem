@@ -13,6 +13,7 @@ import javax.transaction.Transactional;
 import java.util.Date;
 import java.util.List;
 import org.springframework.stereotype.Service;
+import java.util.Calendar;
 @Service
 @Slf4j
 @AllArgsConstructor
@@ -129,8 +130,23 @@ public class ContratServiceImpl  implements  IContratService{
         return etudiantRepository.save(etudiant);
     }*/
     @Override
+    public List<Contrat> retrieveContractsAboutToExpire(int daysToExpire) {
+        log.info("Begin retrieveContractsAboutToExpire");
+        Date currentDate = new Date();
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(currentDate);
+        calendar.add(Calendar.DAY_OF_MONTH, daysToExpire);
+        Date futureDate = calendar.getTime();
+        List<Contrat> contracts = contratRepository.findContractsAboutToExpire(currentDate, futureDate);
+        log.info("End retrieveContractsAboutToExpire");
+        return contracts;
+    }
+  @Override
     public List<Contrat> retrieveContractsByStudent(int id ) {
+        log.info("ehhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh");
+      System.out.println("***************************");
         List<Contrat> contracts = contratRepository.findContratByEtudiantIdEtudiant(id);
+        System.out.println("*****************************Retrieved contracts: " + contracts);
         return contracts;
     }
 

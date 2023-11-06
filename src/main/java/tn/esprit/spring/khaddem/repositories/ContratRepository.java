@@ -23,11 +23,14 @@ public interface ContratRepository extends JpaRepository<Contrat, Integer> {
   // List<Contrat> findByEtudiantNomEAndEtudiantPrenomE(String nomE, String prenomE);
   // List<Contrat> findByEtudiantNomEAndEtudiantPrenomE(String nomE, String prenomE);
    //List<Contrat> findByEtudiantNomEAndEtudiantPrenomE(String nomE, String prenomE);
-    List<Contrat> findContratByEtudiantIdEtudiant(int id);
+     List<Contrat> findContratByEtudiantIdEtudiant(int id);
     List<Contrat> findByEtudiantDepartementNomDepart(String departmentName);
 
    /* @Query("SELECT c FROM Contrat c JOIN c.etudiant e WHERE e.nomE = :nomE AND e.prenomE = :prenomE")
     List<Contrat> findByEtudiantNomEAndEtudiantPrenomE(@Param("nomE") String nomE, @Param("prenomE") String prenomE);
 */
+// Define the custom query to retrieve contracts about to expire
+   @Query("SELECT c FROM Contrat c WHERE c.dateFinContrat BETWEEN :startDate AND :endDate")
+   List<Contrat> findContractsAboutToExpire(@Param("startDate") Date startDate, @Param("endDate") Date endDate);
 
 }

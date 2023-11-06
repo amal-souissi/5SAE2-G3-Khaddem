@@ -95,7 +95,7 @@ public class Contrat implements Serializable {
                 ", specialite=" + specialite +
                 ", archived=" + archived +
                 ", montantContrat=" + montantContrat +
-                ", etudiant=" + etudiant +
+                //", etudiant=" + etudiant +
                 '}';
     }
 

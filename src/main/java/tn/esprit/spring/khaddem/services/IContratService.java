@@ -25,4 +25,5 @@ public interface IContratService {
     public List<Contrat> retrieveContractsByStudent(int id);
     public List<Contrat> retrieveContractsByDepartment(String departmentName);
     //public Etudiant createOrUpdateEtudiant(Etudiant etudiant);
+    public List<Contrat> retrieveContractsAboutToExpire(int daysToExpire);
 }

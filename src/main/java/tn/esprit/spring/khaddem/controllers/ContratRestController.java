@@ -3,6 +3,7 @@ package tn.esprit.spring.khaddem.controllers;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.http.MediaType;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.web.bind.annotation.*;
 import tn.esprit.spring.khaddem.entities.Contrat;
@@ -14,6 +15,7 @@ import java.util.List;
 @AllArgsConstructor
 @RequestMapping("/contrat")
 public class ContratRestController {
+    @Autowired
     IContratService contratService;
 
     // http://localhost:8089/Kaddem/contrat/retrieve-all-contrats
@@ -86,14 +88,18 @@ public class ContratRestController {
 
 
     @GetMapping("/byStudent/{id}")
-    public List<Contrat> retrieveContractsByStudent(@PathVariable int id) {
+    @ResponseBody
+    public List<Contrat> retrieveContractsStudent(@PathVariable int id) {
         return contratService.retrieveContractsByStudent(id);
     }
 
-
     @GetMapping("/byDepartment/{departmentName}")
-    public List<Contrat> retrieveContractsByDepartment(@PathVariable String departmentName) {
+    public List<Contrat> retrieveContractsDepartment(@PathVariable String departmentName) {
         return contratService.retrieveContractsByDepartment(departmentName);
+    }
+    @GetMapping("/retrieveContractsAboutToExpire")
+    public List<Contrat> retrieveContractsToExpire(@RequestParam int daysToExpire) {
+        return contratService.retrieveContractsAboutToExpire(daysToExpire);
     }
 
 }
