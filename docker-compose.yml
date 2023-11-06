@@ -1,9 +1,14 @@
 version: '3'
 services:
   prometheus:
-    image: prom/prometheus
+    container_name: prometheus
+    network_mode: bridge
     ports:
-      - 9090:9090
+      - "9090:9090"
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+    command: '--config.file=/etc/prometheus/prometheus.yml'
+    image: prom/prometheus
 
   mysqldb:
     image: mysql
@@ -34,3 +39,6 @@ services:
     depends_on:
       - prometheus
       - mysqldb
+
+volumes:
+  db:
