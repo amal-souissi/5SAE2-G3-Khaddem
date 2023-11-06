@@ -108,5 +108,30 @@ public class EtudiantServiceImpl implements IEtudiantService{
         return departement.getEtudiants();
     }
 
+    @Override
+    public double calculateAverageAgeInDepartment(Integer idDepartement) {
+        Departement departement = departementRepository.findById(idDepartement).orElse(null);
+
+        if (departement == null) {
+            log.error("Department not found with ID: " + idDepartement);
+            return 0.0; // Handle error case as needed
+        }
+
+        List<Etudiant> etudiantsInDepartment = departement.getEtudiants();
+        if (etudiantsInDepartment.isEmpty()) {
+            return 0.0; // Handle the case when there are no students in the department
+        }
+
+        // Calculate the sum of ages
+        int totalAge = etudiantsInDepartment.stream()
+                .mapToInt(Etudiant::getAge)
+                .sum();
+
+        // Calculate the average age
+
+        return (double) totalAge / etudiantsInDepartment.size();
+    }
+
+
 
 }
