@@ -1,0 +1,26 @@
+version: '3'
+services:
+  prometheus:
+    image: prom/prometheus
+    ports:
+      - 9090:9090
+    volumes:
+      - ./Prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+
+  grafana:
+    image: grafana/grafana
+    ports:
+      - 3000:3000
+    depends_on:
+      - prometheus
+
+  spring-app:
+    image: amalsouissi/khaddem-4.0
+    container_name: khaddem
+    restart: "no"
+    ports:
+      - 8080:8080
+    depends_on:
+      - prometheus
