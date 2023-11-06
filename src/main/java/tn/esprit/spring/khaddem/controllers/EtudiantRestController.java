@@ -102,4 +102,11 @@ public class EtudiantRestController {
     public List<Etudiant> getEtudiantsByDepartement(@PathVariable("idDepartement") Integer idDepartement) {
         return etudiantService.getEtudiantsByDepartement(idDepartement);
     }
+
+    // http://localhost:8089/Kaddem/etudiant/calculateAverageAgeInDepartment/1
+    @GetMapping("/calculateAverageAgeInDepartment/{idDepartement}")
+    @ResponseBody
+    public double calculateAverageAgeInDepartment(@PathVariable("idDepartement") Integer idDepartement) {
+        return etudiantService.calculateAverageAgeInDepartment(idDepartement);
+    }
 }

@@ -29,5 +29,6 @@ public interface IEtudiantService {
     Etudiant addAndAssignEtudiantToEquipeAndContract (Etudiant e, Integer idContrat , Integer idEquipe);
 
     List<Etudiant> getEtudiantsByDepartement (Integer idDepartement);
+    public double calculateAverageAgeInDepartment(Integer idDepartement);
 
 }
