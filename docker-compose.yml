@@ -4,8 +4,17 @@ services:
     image: prom/prometheus
     ports:
       - 9090:9090
-    command:
-      - '--config.file=./src/main/resources/prometheus.yml'
+
+  mysqldb:
+    image: mysql
+    container_name: mysqldb
+    restart: unless-stopped
+    environment:
+      - MYSQL_DATABASE=achatdb
+    ports:
+      - 3306:3306
+    volumes:
+      - db:/var/lib/mysql
 
   grafana:
     image: grafana/grafana
@@ -24,3 +33,4 @@ services:
       - 8000:8000
     depends_on:
       - prometheus
+      - mysqldb
