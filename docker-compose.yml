@@ -19,7 +19,7 @@ services:
   spring-app:
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: dockerfile
     container_name: khaddem
     restart: "no"
     ports:
