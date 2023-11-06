@@ -17,7 +17,9 @@ services:
       - prometheus
 
   spring-app:
-    image: amalsouissi/khaddem-4.0
+    build:
+      context: .
+      dockerfile: Dockerfile
     container_name: khaddem
     restart: "no"
     ports:
