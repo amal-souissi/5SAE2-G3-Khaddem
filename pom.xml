@@ -78,6 +78,12 @@
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.sonarsource.scanner.api</groupId>
+            <artifactId>sonar-scanner-api</artifactId>
+            <version>2.14.0.2002</version>
+        </dependency>
+
     </dependencies>
 
     <distributionManagement>
