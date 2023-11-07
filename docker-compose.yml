@@ -10,17 +10,6 @@ services:
     command: '--config.file=/etc/prometheus/prometheus.yml'
     image: prom/prometheus
 
-  mysqldb:
-    image: mysql
-    container_name: mysqldb
-    restart: unless-stopped
-    environment:
-      - MYSQL_DATABASE=khaddem
-    ports:
-      - 3306:3306
-    volumes:
-      - db:/var/lib/mysql
-
   grafana:
     image: grafana/grafana
     ports:
