@@ -5,9 +5,6 @@ services:
     network_mode: bridge
     ports:
       - "9090:9090"
-    volumes:
-      - ./prometheus.yml:/etc/prometheus/prometheus.yml
-    command: '--config.file=/etc/prometheus/prometheus.yml'
     image: prom/prometheus
 
   grafana:
@@ -25,8 +22,6 @@ services:
     restart: "no"
     ports:
       - 8000:8000
-    depends_on:
-      - prometheus
 
 volumes:
   db:
