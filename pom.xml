@@ -69,6 +69,12 @@
     </distributionManagement>
     <build>
         <plugins>
+
+            <plugin>
+                <groupId>org.sonarsource.scanner.maven</groupId>
+                <artifactId>sonar-maven-plugin</artifactId>
+                <version>3.10.0.2594</version>
+            </plugin>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
@@ -99,5 +105,16 @@
         <finalName>khaddem</finalName>
     </build>
 
-
+    <profiles>
+        <profile>
+            <id>sonar</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <!-- SonarQube server URL -->
+                <sonar.host.url>http://192.168.1.134:9000</sonar.host.url>
+            </properties>
+        </profile>
+    </profiles>
 </project>
