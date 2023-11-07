@@ -67,6 +67,7 @@
     </dependencies>
 
     <build>
+        <finalName>5SAE2-G3-Khaddem</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
