@@ -17,8 +17,6 @@
         <java.version>1.8</java.version>
         <maven-jar-plugin.version>3.1.1</maven-jar-plugin.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <sonar.host.url>http://192.168.1.134:9000</sonar.host.url>
-        <sonar.login>ab6636419a486366ff1f7bc8b3a454357e04f39f</sonar.login>
     </properties>
     <dependencies>
         <dependency>
@@ -97,7 +95,6 @@
             <plugin>
                 <groupId>org.sonarsource.scanner.maven</groupId>
                 <artifactId>sonar-maven-plugin</artifactId>
-                <version>3.10.0.2594</version>
             </plugin>
 
             <plugin>
