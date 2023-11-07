@@ -19,9 +19,22 @@ services:
       context: .
       dockerfile: dockerfile
     container_name: khaddem
-    restart: "no"
     ports:
       - 8000:8000
+    depends_on:
+      - db
+    env_file:
+      - ./.env
+    environment:
+      SPRING_APPLICATION_JSON: '{
+            "server.port" : "$SPRING_LOCAL_PORT",
+            "spring.datasource.url"  : "jdbc:mysql://mysqldb:$MYSQLDB_DOCKER_PORT/$MYSQLDB_DATABASE?createDatabaseIfNotExist=true",
+            "spring.datasource.username" : "$MYSQLDB_USER",
+            "spring.datasource.password" : "$MYSQLDB_ROOT_PASSWORD",
+            "spring.jpa.properties.hibernate.dialect" : "org.hibernate.dialect.MySQL5InnoDBDialect",
+            "spring.jpa.hibernate.ddl-auto" : "update"
+          }'
+    restart: on-failure
 
   db:
     image: mysql
